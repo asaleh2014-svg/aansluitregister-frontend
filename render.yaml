@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: energy-dashboard
+    env: node
+    plan: free
+    buildCommand: |
+      unzip "aansluitregister---energy-dashboard (7).zip" -d . && npm install
+    startCommand: npm run start:backend
+    envVars:
+      - key: GEMINI_API_KEY
+        value: PLACEHOLDER_API_KEY
